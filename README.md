@@ -6,3 +6,5 @@
 ![CodeQL](https://github.com/UltiRequiem/javascript-data-structures-platzi/workflows/CodeQL/badge.svg)
 
 ![Cover](./assets/cover.png)
+
+[Deno](https://deno.land) is used to run the code.
