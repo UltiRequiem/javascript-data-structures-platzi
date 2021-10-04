@@ -23,9 +23,22 @@ class HashTable {
 
     return this.data;
   }
+
+  get(key) {
+    const addres = this.hashMethod(key);
+    const currentBucket = this.data[addres];
+
+    if (currentBucket) {
+      for (let i = 0; i < currentBucket.length; i++) {
+        if (currentBucket[i][0] === key) {
+          return currentBucket[i][1];
+        }
+      }
+    }
+  }
 }
 
 const myHashTable = new HashTable(50);
 
-console.log(myHashTable.set("Zero", 45))
-console.log(myHashTable.set("v1rtl", 450))
+console.log(myHashTable.set("Zero", 45));
+console.log(myHashTable.set("v1rtl", 450));
