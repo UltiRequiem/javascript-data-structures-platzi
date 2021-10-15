@@ -1,6 +1,6 @@
 // const NAMES = ["Zero", "Poli", "Suzaku", "Eufi", "Miles", "Gwen"];
 
-class CoolArray {
+export class CoolArray {
   constructor(...items) {
     this.length = items.length;
     this.data = { ...items };
