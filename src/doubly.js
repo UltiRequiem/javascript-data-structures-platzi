@@ -1,6 +1,6 @@
 import Node from "./node.js";
 
-export class DoublyLikedList {
+export default class DoublyLikedList {
   constructor(value) {
     this.head = {
       value: value,
@@ -13,13 +13,13 @@ export class DoublyLikedList {
   }
 
   append(value) {
-    const newNode = new Node(value);
+    const node = new Node(value);
 
-    newNode.prev = this.tail;
+    node.prev = this.tail;
 
-    this.tail.next = newNode;
+    this.tail.next = node;
 
-    this.tail = newNode;
+    this.tail = node;
     this.length++;
 
     return this;

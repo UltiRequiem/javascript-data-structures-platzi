@@ -10,10 +10,10 @@ export class MySinglyLinkedList {
   }
 
   append(value) {
-    const newNode = new Node(value);
+    const node = new Node(value);
 
-    this.tail.next = newNode;
-    this.tail = newNode;
+    this.tail.next = node;
+    this.tail = node;
 
     this.length++;
 

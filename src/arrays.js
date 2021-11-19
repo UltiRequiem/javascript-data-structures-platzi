@@ -1,6 +1,4 @@
-// const NAMES = ["Zero", "Poli", "Suzaku", "Eufi", "Miles", "Gwen"];
-
-export class CoolArray {
+export default class CoolArray {
   constructor(...items) {
     this.length = items.length;
     this.data = { ...items };
@@ -38,11 +36,13 @@ export class CoolArray {
     for (let i = index; i < this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
     }
+
     delete this.data[this.length - 1];
   }
 }
 
 const myArray = new CoolArray("Zero", "Poli", "Suzaku", "Miles");
+
 console.log(myArray.toString());
 
 console.log(myArray.length);
@@ -50,4 +50,5 @@ console.log(myArray.length);
 myArray.push("Nyanners");
 
 console.log(myArray.length);
+
 console.log(myArray.toString());

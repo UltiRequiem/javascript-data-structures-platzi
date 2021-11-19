@@ -1,4 +1,4 @@
-export class HashTable {
+export default class HashTable {
   constructor(size) {
     this.data = new Array(size);
   }
@@ -14,19 +14,19 @@ export class HashTable {
   }
 
   set(key, value) {
-    const addres = this.hashMethod(key);
+    const address = this.hashMethod(key);
 
-    if (!this.data[addres]) {
-      this.data[addres] = [];
+    if (!this.data[address]) {
+      this.data[address] = [];
     }
-    this.data[addres].push([key, value]);
+    this.data[address].push([key, value]);
 
     return this.data;
   }
 
   get(key) {
-    const addres = this.hashMethod(key);
-    const currentBucket = this.data[addres];
+    const address = this.hashMethod(key);
+    const currentBucket = this.data[address];
 
     if (currentBucket) {
       for (let i = 0; i < currentBucket.length; i++) {

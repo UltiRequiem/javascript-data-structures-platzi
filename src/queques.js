@@ -13,6 +13,7 @@ export default class Queue {
 
   enqueue(value) {
     const node = new Node(value);
+
     if (this.length === 0) {
       this.first = node;
       this.last = node;
@@ -34,4 +35,6 @@ console.log(queue.enqueue(1));
 
 console.log(queue.enqueue("hello"));
 
-console.log(queue.peek())
+console.log(queue.peek());
+
+console.log(queue);

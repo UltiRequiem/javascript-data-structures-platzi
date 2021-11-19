@@ -1,10 +1,3 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
-
 export class Stack {
   constructor() {
     this.top = null;
