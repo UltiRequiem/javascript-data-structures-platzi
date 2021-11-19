@@ -1,7 +1,18 @@
 import Node from "./node.ts";
 
-export default class DoublyLikedList {
-  constructor(value) {
+interface Head<T> {
+  value: T;
+  next: Node<T> | null;
+}
+
+export default class DoublyLikedList<T> {
+  public head: Head<T>;
+
+  public tail: Head<T> | Node<T>;
+
+  public length: number;
+
+  constructor(value: T) {
     this.head = {
       value: value,
       next: null,
@@ -12,7 +23,7 @@ export default class DoublyLikedList {
     this.length = 1;
   }
 
-  append(value) {
+  append(value: T) {
     const node = new Node(value);
 
     node.prev = this.tail;

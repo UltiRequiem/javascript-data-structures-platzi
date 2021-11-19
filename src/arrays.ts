@@ -1,14 +1,17 @@
-export default class CoolArray {
-  constructor(...items) {
+export default class CoolArray<T> {
+  public length: number;
+  public data: T[];
+
+  constructor(...items: T[]) {
     this.length = items.length;
     this.data = { ...items };
   }
 
-  get(index) {
+  get(index: number) {
     return this.data[index];
   }
 
-  push(item) {
+  push(item: T) {
     this.data[this.length + 1] = item;
     this.length++;
   }
@@ -28,11 +31,11 @@ export default class CoolArray {
     return Object.values(this.data);
   }
 
-  delete(index) {
+  delete(index: number) {
     delete this.data[index];
   }
 
-  shiftIndex(index) {
+  shiftIndex(index: number) {
     for (let i = index; i < this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
     }
