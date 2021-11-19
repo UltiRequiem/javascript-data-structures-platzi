@@ -6,7 +6,7 @@ interface Head<T> {
 }
 
 export class CustomNode<T> extends Node<T> {
-  public prev: Head<T> | Head<T> | null;
+  public prev: Head<T> | Node<T> | null;
 
   constructor(value: T) {
     super(value);
@@ -33,7 +33,7 @@ export default class DoublyLikedList<T> {
   append(value: T) {
     const node = new CustomNode(value);
 
-    node.prev = this.tail as Head<T>;
+    node.prev = this.tail;
     this.tail.next = node;
     this.tail = node;
     this.length++;
