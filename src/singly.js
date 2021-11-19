@@ -1,8 +1,8 @@
 import Node from "./node.ts";
 
 export class MySinglyLinkedList {
-  constructor(value) {
-    this.head = new Node(value);
+  constructor(...value) {
+    this.head = new Node(...value);
 
     this.tail = this.head;
 
@@ -20,3 +20,9 @@ export class MySinglyLinkedList {
     return this;
   }
 }
+
+const list = new MySinglyLinkedList(34, "hey");
+
+list.append(2);
+
+console.log(list);
