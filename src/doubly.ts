@@ -5,11 +5,18 @@ interface Head<T> {
   next: Node<T> | null;
 }
 
+export class CustomNode<T> extends Node<T> {
+  public prev: Head<T> | Head<T> | null;
+
+  constructor(value: T) {
+    super(value);
+    this.prev = null;
+  }
+}
+
 export default class DoublyLikedList<T> {
   public head: Head<T>;
-
   public tail: Head<T> | Node<T>;
-
   public length: number;
 
   constructor(value: T) {
@@ -24,12 +31,10 @@ export default class DoublyLikedList<T> {
   }
 
   append(value: T) {
-    const node = new Node(value);
+    const node = new CustomNode(value);
 
-    node.prev = this.tail;
-
+    node.prev = this.tail as Head<T>;
     this.tail.next = node;
-
     this.tail = node;
     this.length++;
 
