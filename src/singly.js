@@ -1,4 +1,4 @@
-import Node from "./node.js";
+import Node from "./node.ts";
 
 export class MySinglyLinkedList {
   constructor(value) {

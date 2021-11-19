@@ -1,4 +1,4 @@
-import Node from "./node.js";
+import Node from "./node.ts";
 
 export default class DoublyLikedList {
   constructor(value) {
