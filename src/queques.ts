@@ -1,6 +1,10 @@
 import Node from "./node.ts";
 
-export default class Queue {
+export default class Queue<T> {
+  public first: null | Node<T>;
+  public last: null | Node<T>;
+  public length: number;
+
   constructor() {
     this.first = null;
     this.last = null;
@@ -11,14 +15,14 @@ export default class Queue {
     return this.first;
   }
 
-  enqueue(value) {
+  enqueue(value: T) {
     const node = new Node(value);
 
     if (this.length === 0) {
       this.first = node;
       this.last = node;
     } else {
-      this.last.next = node;
+      this.last!.next = node;
       this.last = node;
     }
     this.length++;
